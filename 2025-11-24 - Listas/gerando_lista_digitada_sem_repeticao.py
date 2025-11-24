@@ -16,8 +16,12 @@ while intValor != 0:
       if intValor == 0:
          print('Foi informado o valor 0. Encerrando o programa...\n')
       elif intValor > 0:
-         print(f'O número {intValor} é positivo... Será adicionado na lista.\n')
-         lstValores.append(intValor)
+         # Adiciona o valor na lista apenas se não estiver presente
+         if intValor not in lstValores:
+            print(f'O número {intValor} é positivo e não está na lista... Será adicionado na lista.\n')
+            lstValores.append(intValor)
+         else:
+            print(f'O número {intValor} já está na lista. Não será adicionado novamente.\n')
       else:
          print(f'O número {intValor} é negativo... Não será adicionado na lista.\n')
 
